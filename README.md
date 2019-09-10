@@ -1,5 +1,5 @@
 WORKING TITLE:
-PIANO_LEGENDS
+Random Gif
 
 DAILY GOALS: 
 Tuesday: create idea, find API, get approval, begin creating HTML 
@@ -10,13 +10,14 @@ Friday: finish Javascript file, make responsive
 WireFrames: https://cloudinary.com/console/media_library/folders/all/
 
 PRIORITY MATRIX:
-A. Make an acceptable keyboard image with HTML and CSS
-B. Create a form that accepts a COMPOSER NAME
-C. Make each key click display a section of that piano composers information (bio, famous works, image)
-D. Make each key click play an audio excerpt
+A. Make an HTML Page with an title and input box.
+B. Create a space for a random gif to show up given user prompt
+C. Create functionality for the input box
+D. Connect to API
+E. Create a button that will act as a "next gif" to shuffle through results
 
 API:
-api.genius.com
+api.giphy.com
 
 
 FEATURES NEEDED TO MEET MVP:
@@ -25,11 +26,14 @@ FEATURES NEEDED TO MEET MVP:
 3. Javascript which will append portions of that info to the page on a specified piano-key click
 
 PMVP: 
-1. Add an audio file to each key click.
-2. Animate Key Clicks
+1. Create topic buttons like "popular", "new"
+2. Add sound effects
+3. Storage of favorite gifs
 
 TIME-FRAMES:
 Creating Title and Input Form: Priority, H/ Estimated time: 2 hour
-Creating Keyboard: Priority: H/ Estimated time: 4 hours
-Working with API: Priority: H/ Estimated time: 3 hours
+Creating gif space and shuffle button layout: Priority: H/ Estimated time: 2 hours
+Connecting API: Priority: H/ Estimated time: 4 hours
 Javascript functionality: Priority: H/ Estimated time: 4 hours
+Adding special buttons: Priority: M/ Estimated time: 2 hours
+Special button functionality: Priority: M/ Estimated time: 2 hours
