@@ -58,7 +58,7 @@ TIME-FRAMES:
 
     -Getting all elements to appear in HTML page: Priority, H/ Estimated time: 2 hours
 
-    -Fitting elements on the page properly
+    -Fitting elements on the page properly: 3 hours
 
     -Connecting API: Priority: H/ Estimated time: 4 hours
 
@@ -66,4 +66,4 @@ TIME-FRAMES:
 
     -Adding special buttons: Priority: M/ Estimated time: 2 hours
 
-    -Special button functionality: Priority: M/ Estimated time: 2 hours
+    -Special button functionality: Priority: M/ Estimated time: 3 hours
