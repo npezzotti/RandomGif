@@ -25,6 +25,18 @@ form {
     flex-direction: row;
     justify-content: space-evenly;
 }
+#gif {
+    border: solid black 10px;
+    border-color:rgba(0, 174, 255, 0.644);
+}
+#heart { 
+    width: 80px; 
+    height: 80px;
+}
+#next{ 
+    width: 80px; 
+    height: 80px;
+}
 footer {
     background-color: rgba(0, 174, 255, 0.644);
     width: 100%;
