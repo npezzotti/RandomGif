@@ -9,6 +9,7 @@ const arrow = document.querySelector("#next");
 const input = document.getElementById("search");
 const searchButton = document.querySelector("#search-button");
 const gif = document.querySelector("#gif");
+var searchText = ""
 
 window.onload = randomGif();
 
@@ -19,11 +20,19 @@ async function randomGif() {
 
 searchButton.addEventListener("click", getUrl);
 
-arrow.addEventListener("click", getUrl);
+arrow.addEventListener("click", shuffle);
 
 async function getUrl() {
     event.preventDefault();
+    searchText = input.value
+    input.value = "";
     let index = Math.floor((Math.random() * 100) + 1);
-    let response = await axios.get(url + apiKey + input.value + limit + 100 + offset + index + remainingUrl)
+    let response = await axios.get(url + apiKey + searchText + limit + 100 + offset + index + remainingUrl)
+    gif.src = response.data.data[0].images.fixed_width.url
+}
+
+async function shuffle() {
+    let index = Math.floor((Math.random() * 100) + 1);
+    let response = await axios.get(url + apiKey + searchText + limit + 100 + offset + index + remainingUrl)
     gif.src = response.data.data[0].images.fixed_width.url
 }
