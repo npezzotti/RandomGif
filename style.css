@@ -20,22 +20,45 @@ form {
     padding: 15px;
 }
 #pictures {
-    margin: 200px auto;
+    margin: 50px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 #gif {
-    border: solid black 10px;
-    border-color:rgba(0, 174, 255, 0.644);
+    border: solid rgba(0, 174, 255, 0.644) 10px;
+    border-radius: 5%;
 }
 #heart { 
+    margin: 100px;
     width: 80px; 
     height: 80px;
 }
 #next{ 
+    margin: 100px;
     width: 80px; 
     height: 80px;
+}
+#extra-buttons {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#floppy-disk {
+    margin: 0 20px;
+    width: 50px; 
+    height: 50px;
+}
+#trending {
+    margin: 0 20px;
+    width: 50px; 
+    height: 50px;
+}
+#random {
+    margin: 0 20px;
+    width: 50px; 
+    height: 50px;
 }
 footer {
     background-color: rgba(0, 174, 255, 0.644);
