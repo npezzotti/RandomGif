@@ -1,0 +1,33 @@
+body {
+    margin: 0 auto;
+    background-color: rgb(96, 189, 96);
+    font-family: 'Modak', cursive;
+    font-size: 36px;
+    color: white;
+}
+#top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(0, 174, 255, 0.644);
+}
+h1 {
+    margin: 10px 0;
+    padding: 15px;
+}
+form {
+    padding: 15px;
+}
+#pictures {
+    margin: 200px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+footer {
+    background-color: rgba(0, 174, 255, 0.644);
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
