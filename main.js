@@ -21,11 +21,9 @@ searchButton.addEventListener("click", getUrl);
 
 arrow.addEventListener("click", getUrl);
 
-
 async function getUrl() {
     event.preventDefault();
-    let index = Math.floor(Math.random * 10); 
-    console.log(index)
-    let response = await axios.get(url + apiKey + input.value + limit + 10 + offset + index + remainingUrl)
+    let index = Math.floor((Math.random() * 100) + 1);
+    let response = await axios.get(url + apiKey + input.value + limit + 100 + offset + index + remainingUrl)
     gif.src = response.data.data[0].images.fixed_width.url
 }
