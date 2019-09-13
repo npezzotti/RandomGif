@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     background-color: rgb(96, 189, 96);
-    font-family: 'Modak', cursive;
+    font-family: 'Shadows Into Light', cursive;
     font-size: 36px;
     color: white;
 }
@@ -20,7 +20,7 @@ form {
     padding: 15px;
 }
 #pictures {
-    margin: 50px auto;
+    margin: 50px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -28,20 +28,20 @@ form {
 #gif {
     border: solid rgba(0, 174, 255, 0.644) 10px;
     border-radius: 5%;
-    margin: 0 100px;
+    margin: 0 0;
 }
 #heart { 
-    margin: 100px;
-    width: 80px; 
-    height: 80px;
+    margin: 100px 0px;
+    width: 70px; 
+    height: 70px;
 }
 #next{ 
-    margin: 100px;
-    width: 80px; 
-    height: 80px;
+    margin: 100px 0px;
+    width: 70px; 
+    height: 70px;
 }
 #extra-buttons {
-    margin: 25px auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -61,30 +61,26 @@ form {
     width: 50px; 
     height: 50px;
 }
+#saved-gifs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
 footer {
     background-color: rgba(0, 174, 255, 0.644);
-    width: 100%;
     font-size: 18px;
     text-align: center;
-}
-@media screen and (max-width: 600px) {
-    #pictures {
-        display: flex;
-        flex-wrap: wrap;
-        order: 2 1 3;
-
-    }
-    #heart {
-        order: 1
-    }
-    #gif {
-        order: 0
-    }
-    #next {
-        order: 2
-    }
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-top: 50px;
 }
 @media screen and (max-width: 900px) {
+    body {
+        font-size: 28px;
+    }
     #top {
         display: flex;
         flex-direction: column;
@@ -95,4 +91,49 @@ footer {
     form {
         text-align: center;
     }
+    #pictures {
+        margin: 20px auto 0px auto;
+    }
+    #next {
+        width: 60px;
+        height: 60px;
+    }
+    #heart {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 20px;
+    }
+    #top {
+        height: 200px;
+    }
+    h1 {
+        padding: 0;
+    }
+    #pictures {
+        display: flex;
+        flex-wrap: wrap;
+        order: 2 1 3;
+    }
+    #heart {
+        order: 1;
+        width: 50px;
+        height: 50px;
+        margin-right: 0;
+    }
+    #gif {
+        order: 0;
+        margin: 0 200px;
+    }
+    #next {
+        order: 2;
+        width: 50px;
+        height: 50px;
+        margin-left: 0;
+    }
+    #extra-buttons {
+        margin: 0px auto;
 }

@@ -19,8 +19,8 @@ searchButton.addEventListener("click", getUrl);
 
 async function randomGif() {
     let response = await axios.get("https://api.giphy.com/v1/gifs/random?api_key=Zw5WFdH43r4edQ8CgtZI453WmNqmVTef&tag=&rating=PG")
-    console.log(response);
-    gif.src = response.data.data.images.fixed_width.url;
+    gif.src = response.data.data.images.downsized.url;
+    arrow.removeEventListener("click", trendingGif);
     arrow.removeEventListener("click", shuffle)
     arrow.addEventListener("click", randomGif);
     searchText = ""
@@ -32,7 +32,8 @@ async function getUrl() {
     input.value = "";
     let index = Math.floor((Math.random() * 50) + 1);
     let response = await axios.get(url + apiKey + searchText + limit + 1 + offset + index + remainingUrl);
-    gif.src = response.data.data[0].images.fixed_width.url;
+    gif.src = response.data.data[0].images.downsized.url;
+    arrow.removeEventListener("click", trendingGif);
     arrow.removeEventListener("click", randomGif)
     arrow.addEventListener("click", shuffle);
 }
@@ -40,32 +41,56 @@ async function getUrl() {
 async function shuffle() {
     let index = Math.floor((Math.random() * 50) + 1);
     let response = await axios.get(url + apiKey + searchText + limit + 1 + offset + index + remainingUrl);
-    gif.src = response.data.data[0].images.fixed_width.url;
+    gif.src = response.data.data[0].images.downsized.url;
+}
+
+async function trendingGif() {
+    let response = await axios.get("https://api.giphy.com/v1/gifs/trending?api_key=Zw5WFdH43r4edQ8CgtZI453WmNqmVTef" + limit + 200 + remainingUrl);
+    gif.src = response.data.data[Math.floor(Math.random() * 200) + 1].images.downsized.url;
+    arrow.removeEventListener("click", randomGif);
+    arrow.removeEventListener("click", shuffle);
+    arrow.addEventListener("click", trendingGif);
+    searchText = ""
 }
 
 random.addEventListener("click", randomGif);
 
 heart.addEventListener("click", save);
 
+trending.addEventListener("click", trendingGif);
+
 function save() {
-    console.log("Clicked")
-    newKey = 0
-    for (let i = 0; i < localStorage.length; i++) {
-        if (i != Object.keys(localStorage)) {
-            newKey = i;
-            console.log(newKey)
-            window.localStorage.setItem(newKey, gif.src)
-            return;
-        }
-    }
+    
+    localStorage.setItem(localStorage.length + 1, gif.src);
+    console.log("clicked", localStorage, Object.keys(localStorage));
+    // for (let i = 0; i <= localStorage.length; i++) {
+    //     if (Object.keys(localStorage).includes(`${i}`) == false) {
+    //         newKey = `${i}`;
+    //         window.localStorage.setItem(newKey, gif.src)
+    //         return;
+    //     }
+    // }
 }
 
 disk.addEventListener("click", displayStorage);
 
 function displayStorage() {
-    let savedItems = window.localStorage.getItem("link")
-    gif.src = savedItems;
+    let savedItems = window.localStorage.getItem(localStorage)
+    if (savedItems) {
+        gif.src = savedItems
+    }
+    const children = document.getElementById("saved-gifs");
+    while (children.lastChild) {
+        children.removeChild(children.lastChild);
+    }
+    Object.keys(localStorage).forEach((image, index) => {
+        console.log(image);
+        let cardImage = `<img src = "${image}" id ="gif-${index}" alt = "Gif">`;
+        let node = document.getElementById("saved-gifs").insertAdjacentHTML('beforeend', cardImage);
+    });
 //     index = array.indexOf(value);
 // if(index >= 0 && index < array.length - 1)
 //    nextItem = array[index + 1]
 }
+
+localStorage.clear();
