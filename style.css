@@ -13,7 +13,7 @@ body {
     background-color: rgba(0, 174, 255, 0.644);
 }
 h1 {
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 15px;
 }
 form {
@@ -41,7 +41,7 @@ form {
     height: 70px;
 }
 #extra-buttons {
-    margin: 20px auto;
+    margin: 20px auto 120px auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -62,8 +62,9 @@ form {
     height: 50px;
 }
 #saved-gifs {
+    margin: 25px auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center; 
     flex-wrap: wrap;
 }
@@ -77,6 +78,8 @@ footer {
     left: 0;
     margin-top: 50px;
 }
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
 @media screen and (max-width: 900px) {
     body {
         font-size: 28px;
@@ -92,7 +95,7 @@ footer {
         text-align: center;
     }
     #pictures {
-        margin: 20px auto 0px auto;
+        margin: 30px auto 0px auto;
     }
     #next {
         width: 60px;
@@ -101,6 +104,18 @@ footer {
     #heart {
         width: 60px;
         height: 60px;
+    }
+    #floppy-disk {
+        width: 50px;
+        height: 50px;
+    }
+    #trending {
+        width: 50px;
+        height: 50px;
+    }
+    #random {
+        width: 50px;
+        height: 50px;
     }
 }
 @media screen and (max-width: 600px) {
@@ -136,4 +151,17 @@ footer {
     }
     #extra-buttons {
         margin: 0px auto;
+    }
+    #floppy-disk {
+        width: 40px;
+        height: 40px;
+    }
+    #trending {
+        width: 40px;
+        height: 40px;
+    }
+    #random {
+        width: 40px;
+        height: 40px;
+    }
 }

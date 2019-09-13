@@ -19,7 +19,7 @@ searchButton.addEventListener("click", getUrl);
 
 async function randomGif() {
     let response = await axios.get("https://api.giphy.com/v1/gifs/random?api_key=Zw5WFdH43r4edQ8CgtZI453WmNqmVTef&tag=&rating=PG")
-    gif.src = response.data.data.images.downsized.url;
+    gif.src = response.data.data.images.original.url;
     arrow.removeEventListener("click", trendingGif);
     arrow.removeEventListener("click", shuffle)
     arrow.addEventListener("click", randomGif);
@@ -45,8 +45,8 @@ async function shuffle() {
 }
 
 async function trendingGif() {
-    let response = await axios.get("https://api.giphy.com/v1/gifs/trending?api_key=Zw5WFdH43r4edQ8CgtZI453WmNqmVTef" + limit + 200 + remainingUrl);
-    gif.src = response.data.data[Math.floor(Math.random() * 200) + 1].images.downsized.url;
+    let response = await axios.get("https://api.giphy.com/v1/gifs/trending?api_key=Zw5WFdH43r4edQ8CgtZI453WmNqmVTef" + limit + 300 + remainingUrl);
+    gif.src = response.data.data[Math.floor(Math.random() * 300) + 1].images.original.url;
     arrow.removeEventListener("click", randomGif);
     arrow.removeEventListener("click", shuffle);
     arrow.addEventListener("click", trendingGif);
@@ -60,8 +60,7 @@ heart.addEventListener("click", save);
 trending.addEventListener("click", trendingGif);
 
 function save() {
-    
-    localStorage.setItem(localStorage.length + 1, gif.src);
+    localStorage.setItem(gif.src, localStorage.length);
     console.log("clicked", localStorage, Object.keys(localStorage));
     // for (let i = 0; i <= localStorage.length; i++) {
     //     if (Object.keys(localStorage).includes(`${i}`) == false) {
