@@ -4,29 +4,34 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
+        <meta content="width=device-width" name="viewport" /> 
         <title>Random Gif</title>
-    </head> 
+    </head>
     <body>
-        <div id= "top">
-            <h1>Random Gif</h1>
-            <form>
-                Search:<br><input type="text" placeholder = "Topic here!" id = "search">
-                <input type="submit" value="Get Gifs!" id= "search-button">
-            </form>
+        <div id = "page-container">
+            <div id = "content-wrap">
+                <div id= "top">
+                    <h1>Random Gif</h1>
+                    <form>
+                        Search:<br><input type="text" placeholder = "Topic here!" id = "search">
+                        <input type="submit" value="Get Gifs!" id= "search-button">
+                    </form>
+                </div>
+                <div id = "pictures">
+                    <img src = "images/heart.png" id = "heart" class = "grow">
+                    <img src = "#" id = "gif" alt = "Gif">
+                    <img src = "images/ arrow.png" id = "next" class = "grow">
+                </div>
+                <div id = "extra-buttons">
+                    <img src = "images/floppy-disk.png" id = "floppy-disk" class = "grow">
+                    <img src = "images/fire.png" id = "trending" class = "grow">
+                    <img src = "images/question-mark.png" id = "random" class = "grow">
+                </div>
+                <div id="saved-gifs"></div>
+                </div>
+                <footer>Nathan P</footer>
+            </div>
         </div>
-        <div id = "pictures">
-            <img src = "images/heart.png" id = "heart" class = "grow">
-            <img src = "#" id = "gif" alt = "Gif">
-            <img src = "images/ arrow.png" id = "next" class = "grow">
-        </div>
-        <div id = "extra-buttons">
-            <img src = "images/floppy-disk.png" id = "floppy-disk" class = "grow">
-            <img src = "images/fire.png" id = "trending" class = "grow">
-            <img src = "images/question-mark.png" id = "random" class = "grow">
-        </div>
-        <div id="saved-gifs"></div>
-        </div>
-        <footer>Nathan P</footer>
     </body>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="main.js"></script>
