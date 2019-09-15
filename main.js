@@ -36,7 +36,7 @@ async function getUrl() {
     event.preventDefault();
     searchText = input.value;
     input.value = "";
-    let index = Math.floor((Math.random() * 50) + 1);
+    let index = Math.floor((Math.random() * 100) + 1);
     let response = await axios.get(url + apiKey + searchText + limit + 1 + offset + index + remainingUrl);
     if (mobile.matches) {
         gif.src = response.data.data[0].images.fixed_width.url;
@@ -50,7 +50,7 @@ async function getUrl() {
 }
 
 async function shuffle() {
-    let index = Math.floor((Math.random() * 50) + 1);
+    let index = Math.floor((Math.random() * 100) + 1);
     let response = await axios.get(url + apiKey + searchText + limit + 1 + offset + index + remainingUrl);
     if (mobile.matches) {
         gif.src = response.data.data[0].images.fixed_width.url;

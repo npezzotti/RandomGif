@@ -26,6 +26,27 @@ h1 {
 form {
     padding: 15px;
 }
+input[type=submit] {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(96, 189, 96);
+    border: solid white 4px;
+}
+input[type=text] {
+    font-family: 'Shadows Into Light', cursive;
+    height: 30px;
+    width: 150px;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(96, 189, 96);
+    border: solid white 4px;
+}
+::placeholder {
+    font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
+    color: white;
+}
 #pictures {
     margin: 50px 0;
     display: flex;
