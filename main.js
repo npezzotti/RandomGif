@@ -52,7 +52,7 @@ async function getUrl() {
 }
 
 async function shuffle() {
-    let index = Math.floor((Math.random() * 100) + 1);
+    let index = Math.floor((Math.random() * 200) + 1);
     let response = await axios.get(url + apiKey + searchText + limit + 1 + offset + index + remainingUrl);
     if (mobile.matches) {
         gif.src = response.data.data[0].images.fixed_width.url;
@@ -83,6 +83,7 @@ heart.addEventListener("click", save);
 
 trending.addEventListener("click", trendingGif);
 
+//Michael's solution
 // function save() {
 //     localStorage.setItem(gif.src, localStorage.length);
 //     console.log("clicked", localStorage, Object.keys(localStorage));
@@ -107,6 +108,7 @@ trending.addEventListener("click", trendingGif);
 // }
 
 // localStorage.clear();
+//
 
 function save() {
     localStorage.setItem(localStorage.length, gif.src);
