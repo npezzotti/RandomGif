@@ -28,6 +28,7 @@ async function randomGif() {
     }
     arrow.removeEventListener("click", trendingGif);
     arrow.removeEventListener("click", shuffle)
+    arrow.removeEventListener("click", shuffleSaved)
     arrow.addEventListener("click", randomGif);
     searchText = ""
 }
@@ -46,6 +47,7 @@ async function getUrl() {
     }
     arrow.removeEventListener("click", trendingGif);
     arrow.removeEventListener("click", randomGif)
+    arrow.removeEventListener("click", shuffleSaved)
     arrow.addEventListener("click", shuffle);
 }
 
@@ -70,6 +72,7 @@ async function trendingGif() {
     }
     arrow.removeEventListener("click", randomGif);
     arrow.removeEventListener("click", shuffle);
+    arrow.removeEventListener("click", shuffleSaved)
     arrow.addEventListener("click", trendingGif);
     searchText = ""
 }
@@ -80,27 +83,63 @@ heart.addEventListener("click", save);
 
 trending.addEventListener("click", trendingGif);
 
+// function save() {
+//     localStorage.setItem(gif.src, localStorage.length);
+//     console.log("clicked", localStorage, Object.keys(localStorage));
+// }
+
+// disk.addEventListener("click", displayStorage);
+
+// function displayStorage() {
+//     let savedItems = window.localStorage.getItem(localStorage)
+//     if (savedItems) {
+//         gif.src = savedItems
+//     }
+//     const children = document.getElementById("saved-gifs");
+//     while (children.lastChild) {
+//         children.removeChild(children.lastChild);
+//     }
+//     Object.keys(localStorage).forEach((image, index) => {
+//         console.log(image);
+//         let cardImage = `<img src = "${image}" id ="gif-${index}" alt = "Gif">`;
+//         let node = document.getElementById("saved-gifs").insertAdjacentHTML('beforeend', cardImage);
+//     });
+// }
+
+// localStorage.clear();
+
 function save() {
-    localStorage.setItem(gif.src, localStorage.length);
-    console.log("clicked", localStorage, Object.keys(localStorage));
+    localStorage.setItem(localStorage.length, gif.src);
 }
 
-disk.addEventListener("click", displayStorage);
+let storedGifs = []
 
-function displayStorage() {
-    let savedItems = window.localStorage.getItem(localStorage)
-    if (savedItems) {
-        gif.src = savedItems
+function pushStorage() {
+    for (let i = 0; i < localStorage.length; i++) {
+        let keys = localStorage.getItem(i);
+        storedGifs.push(keys)
     }
-    const children = document.getElementById("saved-gifs");
-    while (children.lastChild) {
-        children.removeChild(children.lastChild);
-    }
-    Object.keys(localStorage).forEach((image, index) => {
-        console.log(image);
-        let cardImage = `<img src = "${image}" id ="gif-${index}" alt = "Gif">`;
-        let node = document.getElementById("saved-gifs").insertAdjacentHTML('beforeend', cardImage);
-    });
 }
 
-localStorage.clear();
+disk.addEventListener("click", showSaved);
+
+function showSaved() {
+    pushStorage()
+    gif.src = storedGifs[0];
+    arrow.removeEventListener("click", randomGif);
+    arrow.removeEventListener("click", randomGif);
+    arrow.removeEventListener("click", shuffle);
+    arrow.addEventListener("click", shuffleSaved)
+}
+
+function shuffleSaved() {
+    for (let i = 0; i < storedGifs.length -1; i++) {
+        if (storedGifs[i] == gif.src) {
+            gif.src = storedGifs[i + 1];
+            return;
+        } else if (storedGifs[i] == storedGifs.length) {
+            gif.src = storedGifs[0]
+        }
+    }
+    storedGifs = []
+}
