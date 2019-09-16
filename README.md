@@ -1,8 +1,8 @@
-WORKING TITLE:
-Random Gif Generator
+TITLE:
+Random Gif
 
-PROJECT DESCRIPTION:
-    This app will display a gif given user input search criteria. The user can then navigate to a new one within that criteria with a next button and can save favorites by clicking the heart. PMVP will include buttons which will display newer gifs and popular gifs.
+DESCRIPTION:
+    This app displays gifs for your enjoyment! Upon page load, the app loads random gifs by default (or accessed through the ? button) but can also display gifs given search criteria or a series of trending gifs with the fire button. The user can then navigate to a new gif with the arrow button on the right and can save favorites by clicking the heart. Favorites are a displayed by clicking the floppy disk button.
 
 DAILY GOALS: 
 
@@ -16,7 +16,7 @@ Thursday:
     Begin working on Javascript, connecting API
 
 Friday: 
-    finish Javascript file, make responsive
+    Finish Javascript file, make responsive
 
 
 WIREFRAMES: 
@@ -56,14 +56,23 @@ PMVP:
 
 TIME-FRAMES:
 
-    -Getting all elements to appear in HTML page: Priority, H/ Estimated time: 2 hours
+    -Getting all elements to appear in HTML page: Priority, H/ Estimated time: 2 hours Actual: 5hrs
 
-    -Fitting elements on the page properly: 3 hours
+    -Fitting elements on the page properly: 3 hours/ actual: 4hrs
 
-    -Connecting API: Priority: H/ Estimated time: 4 hours
+    -Connecting API: Priority: H/ Estimated time: 4 hours/ actual: 4hrs
 
-    -Javascript functionality: Priority: H/ Estimated time: 4 hours
+    -Javascript functionality: Priority: H/ Estimated time: 4 hours/ actual: 6hrs
 
-    -Adding special buttons: Priority: M/ Estimated time: 2 hours
+    -Adding special buttons: Priority: M/ Estimated time: 2 hours/ actual 1hr
 
-    -Special button functionality: Priority: M/ Estimated time: 3 hours
+    -Special button functionality: Priority: M/ Estimated time: 3 hours/ actual/ 4hrs
+
+CODE SNIPPET:
+    
+    if (mobile.matches) {
+            gif.src = response.data.data.images.fixed_width.url;
+        }
+        else {
+            gif.src = response.data.data.images.original.url;
+        }
